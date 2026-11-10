@@ -226,10 +226,9 @@
         transform: scale(1.1);
       }
 
-      /* --- 3. HERO SECTION (ĐÃ XÓA KHUNG ĐEN + CHUẨN THU PHÓNG BANNER) --- */
+      /* --- 3. HERO SECTION --- */
       .hero {
         position: relative;
-        /* Dùng contain kết hợp màu nền trùng khớp giúp banner co giãn tỉ lệ chuẩn 100% khi zoom */
         background:
           linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
           url("bannerBac.jpg") center/contain no-repeat;
@@ -249,11 +248,7 @@
       }
       .hero-title {
         font-family: "Merriweather", serif;
-        font-size: clamp(
-          1.2rem,
-          3.5vw,
-          2.1rem
-        ); /* Giảm các giá trị này xuống */
+        font-size: clamp(1.2rem, 3.5vw, 2.1rem);
         color: var(--accent-color);
         margin-bottom: 10px;
         text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
@@ -273,7 +268,6 @@
         min-height: 35px;
         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
       }
-      /* Đã xóa hoàn toàn khối nền đen (background glassmorphism), chữ hiển thị trực tiếp và rõ nét */
       .hero-desc {
         color: #ffffff;
         margin: 0 auto 22px auto;
@@ -611,10 +605,36 @@
         box-shadow: 0 6px 18px rgba(251, 192, 45, 0.4);
       }
 
-      /* --- 8. ACTIVITIES SECTION --- */
+      /* --- 8. ACTIVITIES SECTION (CẬP NHẬT GIAO DIỆN MỚI NÂNG CẤP) --- */
+      .intro-lead-box {
+        max-width: 950px;
+        margin: 0 auto 40px auto;
+        padding: 24px 30px;
+        border-left: 6px solid var(--primary-color);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(253, 246, 230, 0.95)
+        );
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        text-align: center;
+      }
+      .intro-lead-box h3 {
+        color: var(--primary-color);
+        font-family: "Merriweather", serif;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+      .intro-lead-box p {
+        color: var(--text-dark);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
       .activities-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
         max-width: 1150px;
         margin: 0 auto;
@@ -624,7 +644,7 @@
         flex-direction: column;
         overflow: hidden;
         border-radius: 18px;
-        border: 2px solid rgba(183, 28, 28, 0.1);
+        border: 2px solid rgba(183, 28, 28, 0.12);
         background: var(--glass-bg);
         transition: all 0.4s ease;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -636,7 +656,7 @@
       }
       .act-card-img-wrap {
         width: 100%;
-        height: 210px;
+        height: 230px;
         overflow: hidden;
         position: relative;
       }
@@ -647,53 +667,25 @@
         transition: transform 0.5s ease;
       }
       .act-card-item:hover .act-card-img-wrap img {
-        transform: scale(1.1);
+        transform: scale(1.08);
       }
       .act-card-body {
-        padding: 25px;
+        padding: 24px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        justify-content: space-between;
       }
       .act-card-body h3 {
         color: var(--primary-color);
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         margin-bottom: 12px;
         font-family: "Merriweather", serif;
+        line-height: 1.4;
       }
       .act-card-body p {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-        line-height: 1.6;
-      }
-      .btn-activity-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-dark),
-          var(--primary-color)
-        );
-        color: #ffffff;
-        padding: 12px 20px;
-        border-radius: 30px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: var(--transition);
-        box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
-        border: 1px solid var(--accent-color);
-        width: 100%;
-        text-align: center;
-      }
-      .btn-activity-link:hover {
-        background: var(--accent-color);
-        color: var(--primary-dark);
-        transform: scale(1.02);
-        box-shadow: 0 6px 20px rgba(251, 192, 45, 0.5);
+        color: var(--text-dark);
+        font-size: 0.98rem;
+        line-height: 1.65;
       }
 
       /* --- 9. GUESTBOOK SECTION --- */
@@ -1247,9 +1239,7 @@
     <section id="about" class="hero">
       <div class="container hero-content">
         <h1 class="hero-title">Chủ Tịch Hồ Chí Minh</h1>
-        <p class="hero-subtitle">
-          "Người Lắng Sâu Trong Trái Tim Dân Tộc Việt Nam"
-        </p>
+
         <div class="typing-container">
           <span id="typingText" class="typing-text"></span>
         </div>
@@ -1564,17 +1554,57 @@
       </div>
     </section>
 
-    <!-- ACTIVITIES SECTION -->
+    <!-- ACTIVITIES SECTION (ĐÃ CẬP NHẬT THEO YÊU CẦU MỚI) -->
     <section id="activities" class="container section-padding">
       <h2 class="section-title">Phong Trào Thi Đua Noi Gương Bác</h2>
+
+      <!-- ĐOẠN DẪN NHẬP TRANG TRỌNG -->
+      <div class="intro-lead-box glass-card">
+        <h3><i class="fa-solid fa-school"></i> Trường TH - THCS Tân Phước</h3>
+        <p>
+          Hưởng ứng phong trào thi đua học tập và làm theo tư tưởng, đạo đức,
+          phong cách Hồ Chí Minh, các bạn học sinh
+          <strong>Khối 1 & 2 Trường TH - THCS Tân Phước</strong> đã cùng nhau
+          tích cực tham gia các hoạt động thiết thực, noi gương Bác từ những
+          hành động nhỏ nhất hàng ngày qua các phong trào nổi bật:
+        </p>
+      </div>
+
+      <!-- LƯỚI PHONG TRÀO (ĐÃ XÓA NÚT BẤM, TẬP TRUNG HÌNH ẢNH & CHI TIẾT) -->
       <div class="activities-grid">
-        <!-- Thẻ 1 -->
+        <!-- Phong trào 1 -->
         <div class="act-card-item glass-card">
           <div class="act-card-img-wrap">
-            <span class="timeline-badge">Thiếu Nhi Việt Nam</span>
+            <span class="timeline-badge">Khối 1 & 2</span>
             <img
-              src="phongtraobac.jpg"
-              alt="Phong trào thi đua"
+              src="moitruongxanh.jpg"
+              alt="Môi trường xanh - Cuộc sống xanh"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600'
+              "
+            />
+          </div>
+          <div class="act-card-body">
+            <h3>
+              <i class="fa-solid fa-leaf"></i> Môi Trường Xanh - Cuộc Sống Xanh
+            </h3>
+            <p>
+              Học sinh tích cực giữ gìn vệ sinh lớp học, trồng và chăm sóc cây
+              xanh tại khuôn viên trường. Phong trào giúp rèn luyện thói quen
+              yêu thiên nhiên, ý thức bảo vệ môi trường từ những việc nhỏ nhất
+              theo lời Bác dạy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phong trào 2 -->
+        <div class="act-card-item glass-card">
+          <div class="act-card-img-wrap">
+            <span class="timeline-badge">Khối 1 & 2</span>
+            <img
+              src="tuanlehocktap.jpg"
+              alt="Hưởng ứng tuần lễ học tập suốt đời"
               onerror="
                 this.src =
                   'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600'
@@ -1582,61 +1612,43 @@
             />
           </div>
           <div class="act-card-body">
-            <div>
-              <h3>
-                <i class="fa-solid fa-children"></i> Thiếu Nhi Làm Theo 5 Điều
-                Bác Dạy
-              </h3>
-              <p>
-                Hội thi và các hoạt động Đội thu hút hàng ngàn đội viên, thiếu
-                niên nhi đồng tham gia vẽ tranh, kể chuyện và thực hiện nghìn
-                việc tốt noi gương Bác.
-              </p>
-            </div>
-            <a
-              href="https://nbtv.vn/phat-dong-cuoc-thi-ve-tranh-thieu-nhi-ninh-binh-lam-nghin-viec-tot-54532.html"
-              target="_blank"
-              class="btn-activity-link"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Chi
-              Tiết Phong Trào
-            </a>
+            <h3>
+              <i class="fa-solid fa-graduation-cap"></i> Hưởng Ứng Tuần Lễ Học
+              Tập Suốt Đời
+            </h3>
+            <p>
+              Thi đua đọc nhiều sách hay, hăng hái phát biểu và tham gia các
+              tiết học trải nghiệm sáng tạo. Phong trào lan tỏa tinh thần hiếu
+              học, tinh thần tự học mọi lúc mọi nơi của các em học sinh Tân
+              Phước.
+            </p>
           </div>
         </div>
 
-        <!-- Thẻ 2 -->
+        <!-- Phong trào 3 -->
         <div class="act-card-item glass-card">
           <div class="act-card-img-wrap">
-            <span class="timeline-badge">Hành Trình Lịch Sử</span>
+            <span class="timeline-badge">Khối 1 & 2</span>
             <img
-              src="diachido.jpg"
-              alt="Địa chỉ đỏ"
+              src="khonggianhcm.jpg"
+              alt="Không gian văn hoá đọc HCM"
               onerror="
                 this.src =
-                  'https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=600'
+                  'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=600'
               "
             />
           </div>
           <div class="act-card-body">
-            <div>
-              <h3>
-                <i class="fa-solid fa-map-location-dot"></i> Hành Trình Đến Với
-                Địa Chỉ Đỏ
-              </h3>
-              <p>
-                Các hoạt động ngoại khóa ý nghĩa đưa học sinh về nguồn, dâng hoa
-                tại Lăng Bác, Bảo tàng Hồ Chí Minh và các khu di tích lịch sử
-                cách mạng.
-              </p>
-            </div>
-            <a
-              href="https://c1hieuthanha.vinhlong.edu.vn/tin-tuc/tin-phong-trao/hanh-trinh-den-voi-dia-chi-do.html"
-              target="_blank"
-              class="btn-activity-link"
-            >
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Chi
-              Tiết Phong Trào
-            </a>
+            <h3>
+              <i class="fa-solid fa-book-bookmark"></i> Không Gian Văn Hóa Đọc
+              Hồ Chí Minh
+            </h3>
+            <p>
+              Xây dựng góc trưng bày sách báo, tranh ảnh và tư liệu về Bác Hồ
+              tại thư viện và lớp học. Giúp các em dễ dàng tiếp cận, tìm hiểu về
+              cuộc đời cao đẹp của Bác, từ đó bồi đắp lòng kính yêu và noi theo
+              Người.
+            </p>
           </div>
         </div>
       </div>
